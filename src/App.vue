@@ -1,33 +1,60 @@
 <template>
-  <div id="app">
-    <TablaEjercicio
-      :msg="miArray"
-      :text="miColor"
-      :bgp="bgPrimary"
-      :bgs="bgSecondary"
-    />
-    <TablaEjercicio
-      :msg="miArray2"
-      :text="miColor2"
-      :bgp="bgPrimary2"
-      :bgs="bgSecondary2"
-    />
-    <TablaEjercicio
-      :msg="miArray3"
-      :text="miColor3"
-      :bgp="bgPrimary3"
-      :bgs="bgSecondary3"
-    />
+  <div id="app1">
+    <div class="contenedor-tablas">
+      <h3>Tabla Vue 2</h3>
+      <TablaEjercicio
+        :msg="miArray"
+        :text="miColor"
+        :bgp="bgPrimary"
+        :bgs="bgSecondary"
+      />
+      <TablaEjercicio
+        :msg="miArray2"
+        :text="miColor2"
+        :bgp="bgPrimary2"
+        :bgs="bgSecondary2"
+      />
+      <TablaEjercicio
+        :msg="miArray3"
+        :text="miColor3"
+        :bgp="bgPrimary3"
+        :bgs="bgSecondary3"
+      />
+    </div>
+
+    <div class="contenedor-tablas"> 
+      <h3>Tabla Vue 3</h3>
+      <tabla-componente
+        :msg="miArray"
+        :text="miColor"
+        :bgp="bgPrimary"
+        :bgs="bgSecondary"
+      />
+      <tabla-componente
+        :msg="miArray2"
+        :text="miColor2"
+        :bgp="bgPrimary2"
+        :bgs="bgSecondary2"
+      />
+      <tabla-componente
+        :msg="miArray3"
+        :text="miColor3"
+        :bgp="bgPrimary3"
+        :bgs="bgSecondary3"
+      />
+    </div>
   </div>
 </template>
 
 <script>
 import TablaEjercicio from "./components/MiComponente.vue";
+import tablaComponente from "./components/ComponenteVue3.vue";
 
 export default {
   name: "App",
   components: {
     TablaEjercicio,
+    tablaComponente,
   },
   data() {
     return {
@@ -67,12 +94,15 @@ export default {
 </script>
 
 <style>
-#app {
+#app1 {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+
+  display: flex;
+  justify-content: space-around;
 }
 </style>
